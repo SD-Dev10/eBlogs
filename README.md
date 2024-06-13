@@ -13,7 +13,7 @@ Welcome to **eBlogs**, a platform where you can share your thoughts and ideas wi
 - **Flask**: A lightweight WSGI web application framework in Python.
 - **Python**: The programming language used to write the backend logic.
 - **MySQL**: The database system used to store user and blog data.
-
+  
 ## Project Structure
 
 eblogging-backend/
