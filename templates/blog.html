@@ -1,448 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blogs</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
 
-<head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        background: linear-gradient(to right, #e0f7fa, #b2ebf2);
+        font-family: Arial, sans-serif;
+      }
 
-  <title>eBusiness Bootstrap Template - Index</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+      .custom-contact-form {
+        width: 100%;
+        max-width: 600px;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        background-color: #ffffff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
 
-  <!-- Favicons -->
-  <link href="{{ url_for('static',filename='assets/img/favicon.png') }}" rel="icon">
-  <link href="{{ url_for('static',filename='assets/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
+      .custom-contact-form:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      }
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700|Raleway:300,400,400i,500,500i,700,800,900" rel="stylesheet">
+      .custom-contact-form .form-group {
+        margin-bottom: 15px;
+      }
 
-  <!-- Vendor CSS Files -->
-  <link href="{{ url_for('static',filename='assets/vendor/animate.css/animate.min.css') }}" rel="stylesheet">
-  <link href="{{ url_for('static',filename='assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
-  <link href="{{ url_for('static',filename='assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
-  <link href="{{ url_for('static',filename='assets/vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
-  <link href="{{ url_for('static',filename='assets/vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
-  <link href="{{ url_for('static',filename='assets/vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
+      .custom-contact-form .form-control {
+        width: 100%;
+        padding: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        transition: border-color 0.3s;
+      }
 
-  <!-- Template Main CSS File -->
-  <link href="{{ url_for('static',filename='assets/css/style.css') }}" rel="stylesheet">
+      .custom-contact-form .form-control:focus {
+        border-color: #35a6b9;
+        box-shadow: 0 0 8px rgba(53, 166, 185, 0.3);
+        outline: none;
+      }
 
-  <!-- =======================================================
-  * Template Name: eBusiness
-  * Template URL: https://bootstrapmade.com/ebusiness-bootstrap-corporate-template/
-  * Updated: Mar 17 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
-</head>
+      .custom-contact-form button[type="submit"] {
+        width: 100%;
+        background-color: #35a6b9;
+        border: none;
+        padding: 15px;
+        color: #fff;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s;
+      }
 
-<body>
+      .custom-contact-form button[type="submit"]:hover {
+        background-color: #2a8f99;
+      }
 
-  <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top d-flex align-items-center">
-    <div class="container d-flex justify-content-between">
+      .custom-contact-form .loading,
+      .custom-contact-form .error-message,
+      .custom-contact-form .sent-message {
+        display: none;
+        text-align: center;
+        margin-top: 10px;
+      }
 
-      <div class="logo">
-        <h1><a href="index.html"><span>e</span>Business</a></h1>
-        <!-- Uncomment below if you prefer to use an image logo -->
-        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+      .custom-contact-form .loading {
+        color: #35a6b9;
+      }
+
+      .custom-contact-form .error-message {
+        color: red;
+      }
+
+      .custom-contact-form .sent-message {
+        color: green;
+      }
+
+      @media (max-width: 600px) {
+        .custom-contact-form {
+          padding: 15px;
+        }
+
+        .custom-contact-form .form-control {
+          padding: 10px;
+        }
+
+        .custom-contact-form button[type="submit"] {
+          padding: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <form action="#" method="post" role="form" class="custom-contact-form">
+      <div class="form-group">
+        <input
+          type="text"
+          name="name"
+          class="form-control"
+          id="name"
+          placeholder="Your Name"
+          required
+        />
       </div>
 
-      <nav id="navbar" class="navbar">
-        <ul>
-          <li><a class="nav-link scrollto " href="#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="#about">About</a></li>
-          <li><a class="nav-link scrollto" href="#services">Services</a></li>
-          <li><a class="nav-link scrollto" href="#portfolio">Portfolio</a></li>
-          <li><a class="nav-link scrollto" href="#team">Team</a></li>
-          <li><a class="active" href="blog.html">Blog</a></li>
-         
-          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
-
-    </div>
-  </header><!-- End Header -->
-
-  <main id="main">
-
-    <!-- ======= Blog Header ======= -->
-    <div class="header-bg page-area">
-      <div class="container position-relative">
-        <div class="row">
-          <div class="col-md-12 col-sm-12 col-xs-12">
-            <div class="slider-content text-center">
-              <div class="header-bottom">
-                <div class="layer2">
-                  <h1 class="title2">My Blog</h1>
-                </div>
-                <div class="layer3">
-                  <h2 class="title3">Profesional Blog Page</h2>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="form-group mt-3">
+        <input
+          type="text"
+          class="form-control"
+          name="topic"
+          id="subject"
+          placeholder="Topic"
+          required
+        />
       </div>
-    </div><!-- End Blog Header -->
-
-    <!-- ======= Blog Page ======= -->
-    <div class="blog-page area-padding">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-4 col-md-4">
-            <div class="page-head-blog">
-              <div class="single-blog-page">
-                <!-- search option start -->
-                <form action="#">
-                  <div class="search-option">
-                    <input type="text" placeholder="Search...">
-                    <button class="button" type="submit">
-                      <i class="bi bi-search"></i>
-                    </button>
-                  </div>
-                </form>
-                <!-- search option end -->
-              </div>
-              <div class="single-blog-page">
-                <!-- recent start -->
-                <div class="left-blog">
-                  <div class="left-blog">
-                    <h4>recent post</h4>
-                    <div class="recent-post">
-                      <!-- start single post -->
-                   
-                          <p><a href="#"> Redug Lerse dolor sit amet consect adipis elit.</a></p>
-                        </div>
-                      </div>
-                    </div>
-                    <!-- End single post -->
-                    <!-- start single post -->
-                    <div class="recent-single-post">
-                      <div class="post-img">
-                        <a href="#">
-                          <img src="assets/img/blog/2.jpg" alt="">
-                        </a>
-                      </div>
-                      <div class="pst-content">
-                        <p><a href="#"> Redug Lerse dolor sit amet consect adipis elit.</a></p>
-                      </div>
-                    </div>
-                    <!-- End single post -->
-                    <!-- start single post -->
-                    <div class="recent-single-post">
-                      <div class="post-img">
-                        <a href="#">
-                          <img src="assets/img/blog/3.jpg" alt="">
-                        </a>
-                      </div>
-                      <div class="pst-content">
-                        <p><a href="#"> Redug Lerse dolor sit amet consect adipis elit.</a></p>
-                      </div>
-                    </div>
-                    <!-- End single post -->
-                    <!-- start single post -->
-                    <div class="recent-single-post">
-                      <div class="post-img">
-                        <a href="#">
-                          <img src="assets/img/blog/4.jpg" alt="">
-                        </a>
-                      </div>
-                      <div class="pst-content">
-                        <p><a href="#"> Redug Lerse dolor sit amet consect adipis elit.</a></p>
-                      </div>
-                    </div>
-                    <!-- End single post -->
-                  </div>
-                </div>
-                <!-- recent end -->
-              </div>
-             
-             
-              </div>
-              <div class="single-blog-page">
-                <div class="left-tags blog-tags">
-                 
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- End left sidebar -->
-          <!-- Start single blog -->
-          <div class="col-md-8 col-sm-8 col-xs-12">
-            <div class="row">
-              <div class="col-md-12 col-sm-12 col-xs-12">
-                <div class="single-blog">
-                  <div class="single-blog-img">
-                    <a href="blog-details.html">
-                      <img src="assets/img/blog/1.jpg" alt="">
-                    </a>
-                  </div>
-                  <div class="blog-meta">
-                    <span class="comments-type">
-                      <i class="bi bi-chat"></i>
-                      <a href="#">11 comments</a>
-                    </span>
-                    <span class="date-type">
-                      <i class="bi bi-calendar"></i>2016-03-05 / 09:10:16
-                    </span>
-                  </div>
-                  <div class="blog-text">
-                    <h4>
-                      <a href="#">Post my imagine Items</a>
-                    </h4>
-                    <p>
-                      Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit.
-                    </p>
-                  </div>
-                  <span>
-                    <a href="blog-details.html" class="ready-btn">Read more</a>
-                  </span>
-                </div>
-              </div>
-              <!-- End single blog -->
-              <div class="col-md-12 col-sm-12 col-xs-12">
-                <div class="single-blog">
-                  <div class="single-blog-img">
-                    <a href="blog-details.html">
-                      <img src="assets/img/blog/2.jpg" alt="">
-                    </a>
-                  </div>
-                  <div class="blog-meta">
-                    <span class="comments-type">
-                      <i class="bi bi-chat"></i>
-                      <a href="#">7 comments</a>
-                    </span>
-                    <span class="date-type">
-                      <i class="bi bi-calendar"></i>2016-03-05 / 09:10:16
-                    </span>
-                  </div>
-                  <div class="blog-text">
-                    <h4>
-                      <a href="#">Post my imagine Items</a>
-                    </h4>
-                    <p>
-                      Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit.
-                    </p>
-                  </div>
-                  <span>
-                    <a href="blog-details.html" class="ready-btn">Read more</a>
-                  </span>
-                </div>
-              </div>
-              <!-- Start single blog -->
-              <div class="col-md-12 col-sm-12 col-xs-12">
-                <div class="single-blog">
-                  <div class="single-blog-img">
-                    <a href="blog-details.html">
-                      <img src="assets/img/blog/3.jpg" alt="">
-                    </a>
-                  </div>
-                  <div class="blog-meta">
-                    <span class="comments-type">
-                      <i class="bi bi-chat"></i>
-                      <a href="#">13 comments</a>
-                    </span>
-                    <span class="date-type">
-                      <i class="bi bi-calendar"></i>2016-03-05 / 09:10:16
-                    </span>
-                  </div>
-                  <div class="blog-text">
-                    <h4>
-                      <a href="#">Post my imagine Items</a>
-                    </h4>
-                    <p>
-                      Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit.
-                    </p>
-                  </div>
-                  <span>
-                    <a href="blog-details.html" class="ready-btn">Read more</a>
-                  </span>
-                </div>
-              </div>
-              <!-- End single blog -->
-              <div class="col-md-12 col-sm-12 col-xs-12">
-                <div class="single-blog">
-                  <div class="single-blog-img">
-                    <a href="blog-details.html">
-                      <img src="assets/img/blog/4.jpg" alt="">
-                    </a>
-                  </div>
-                  <div class="blog-meta">
-                    <span class="comments-type">
-                      <i class="bi bi-chat"></i>
-                      <a href="#">1 comments</a>
-                    </span>
-                    <span class="date-type">
-                      <i class="bi bi-calendar"></i>2016-03-05 / 09:10:16
-                    </span>
-                  </div>
-                  <div class="blog-text">
-                    <h4>
-                      <a href="#">Post my imagine Items</a>
-                    </h4>
-                    <p>
-                      Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit.
-                    </p>
-                  </div>
-                  <span>
-                    <a href="blog-details.html" class="ready-btn">Read more</a>
-                  </span>
-                </div>
-              </div>
-              <!-- Start single blog -->
-              <div class="col-md-12 col-sm-12 col-xs-12">
-                <div class="single-blog">
-                  <div class="single-blog-img">
-                    <a href="blog-details.html">
-                      <img src="assets/img/blog/5.jpg" alt="">
-                    </a>
-                  </div>
-                  <div class="blog-meta">
-                    <span class="comments-type">
-                      <i class="bi bi-chat"></i>
-                      <a href="#">10 comments</a>
-                    </span>
-                    <span class="date-type">
-                      <i class="bi bi-calendar"></i>2016-03-05 / 09:10:16
-                    </span>
-                  </div>
-                  <div class="blog-text">
-                    <h4>
-                      <a href="#">Post my imagine Items</a>
-                    </h4>
-                    <p>
-                      Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit.
-                    </p>
-                  </div>
-                  <span>
-                    <a href="blog-details.html" class="ready-btn">Read more</a>
-                  </span>
-                </div>
-              </div>
-              <!-- End single blog -->
-              <div class="blog-pagination">
-                <ul class="pagination">
-                  <li class="page-item"><a href="#" class="page-link">&lt;</a></li>
-                  <li class="page-item active"><a href="#" class="page-link">1</a></li>
-                  <li class="page-item"><a href="#" class="page-link">2</a></li>
-                  <li class="page-item"><a href="#" class="page-link">3</a></li>
-                  <li class="page-item"><a href="#" class="page-link">&gt;</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="form-group mt-3">
+        <textarea
+          class="form-control"
+          name="content"
+          rows="5"
+          placeholder="Content"
+          required
+        ></textarea>
       </div>
-    </div><!-- End Blog Page -->
-
-  </main><!-- End #main -->
-
-  <!-- ======= Footer ======= -->
-  <footer>
-    <div class="footer-area">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4">
-            <div class="footer-content">
-              <div class="footer-head">
-                <div class="footer-logo">
-                  <h2><span>e</span>Business</h2>
-                </div>
-
-                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.</p>
-                <div class="footer-icons">
-                  <ul>
-                    <li>
-                      <a href="#"><i class="bi bi-facebook"></i></a>
-                    </li>
-                    <li>
-                      <a href="#"><i class="bi bi-twitter"></i></a>
-                    </li>
-                    <li>
-                      <a href="#"><i class="bi bi-instagram"></i></a>
-                    </li>
-                    <li>
-                      <a href="#"><i class="bi bi-linkedin"></i></a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- end single footer -->
-          <div class="col-md-4">
-            <div class="footer-content">
-              <div class="footer-head">
-                <h4>information</h4>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
-                </p>
-                <div class="footer-contacts">
-                  <p><span>Tel:</span> +123 456 789</p>
-                  <p><span>Email:</span> contact@example.com</p>
-                  <p><span>Working Hours:</span> 9am-5pm</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- end single footer -->
-          <div class="col-md-4">
-            <div class="footer-content">
-              <div class="footer-head">
-                <h4>Instagram</h4>
-                <div class="flicker-img">
-                  <a href="#"><img src="assets/img/portfolio/1.jpg" alt=""></a>
-                  <a href="#"><img src="assets/img/portfolio/2.jpg" alt=""></a>
-                  <a href="#"><img src="assets/img/portfolio/3.jpg" alt=""></a>
-                  <a href="#"><img src="assets/img/portfolio/4.jpg" alt=""></a>
-                  <a href="#"><img src="assets/img/portfolio/5.jpg" alt=""></a>
-                  <a href="#"><img src="assets/img/portfolio/6.jpg" alt=""></a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="my-3">
+        <div class="loading">Loading</div>
+        <div class="error-message"></div>
+        <div class="sent-message">Your blog is submitted. Thank you!</div>
       </div>
-    </div>
-    <div class="footer-area-bottom">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12 col-sm-12 col-xs-12">
-            <div class="copyright text-center">
-              <p>
-                &copy; Copyright <strong>eBusiness</strong>. All Rights Reserved
-              </p>
-            </div>
-            <div class="credits">
-              <!--
-              All the links in the footer should remain intact.
-              You can delete the links only if you purchased the pro version.
-              Licensing information: https://bootstrapmade.com/license/
-              Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=eBusiness
-            -->
-              Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-            </div>
-          </div>
-        </div>
+      <div class="text-center">
+        <button type="submit">Submit</button>
       </div>
-    </div>
-  </footer><!-- End  Footer -->
+    </form>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var form = document.querySelector(".custom-contact-form");
+        var contentInput = form.querySelector('textarea[name="content"]');
+        var submitButton = form.querySelector('button[type="submit"]');
 
-  <div id="preloader"></div>
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+        contentInput.addEventListener("input", function () {
+          var words = contentInput.value.trim().split(/\s+/);
+          if (words.length > 30) {
+            contentInput.setCustomValidity("Content cannot exceed 100 words.");
+            submitButton.disabled = true;
+          } else {
+            contentInput.setCustomValidity("");
+            submitButton.disabled = false;
+          }
+        });
 
-  <!-- Vendor JS Files -->
-  <script src="{{ url_for('static', filename='assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-  <script src="{{ url_for('static', filename='assets/vendor/glightbox/js/glightbox.min.js' )}}"></script>
-  <script src="{{ url_for('static', filename='assets/vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
-  <script src="{{ url_for('static', filename='assets/vendor/swiper/swiper-bundle.min.js') }}"></script>
-  <script src="{{ url_for('static', filename='assets/vendor/php-email-form/validate.js') }}"></script>
-
-  <!-- Template Main JS File -->
-  <script src="{{url_for('static',filename='assets/js/main.js') }}"></script>
-
-</body>
-
+        form.addEventListener("submit", function (event) {
+        
+          if (contentInput.value.trim().split(/\s+/).length > 100) {
+            event.preventDefault();
+          }
+        });
+      });
+    </script>
+  </body>
 </html>

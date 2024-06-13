@@ -1,6 +1,6 @@
 from flask import Flask, request,render_template, redirect, session,url_for,flash
 import dbConnect as dbConnect
-
+import blogDbConnect as blogDbConnect
 
 
 app = Flask(__name__)
@@ -11,12 +11,36 @@ app.secret_key = '@23Fl*aswerjjfiJI(L$)'
 
 @app.route("/")
 def index():
-    return render_template("index.html")
+    #query for the current blog
+    blogDbConnect.blogcursor.execute(
+        f"""SELECT * FROM blogcontent ORDER BY id DESC """
+    )
 
-@app.route("/blog",methods = ['GET'])
+    blogs = blogDbConnect.blogcursor.fetchall()
+ 
+    print(blogs)
+      
+    return render_template("index.html", blogs=blogs)
+
+
+# --- Blog submission process ---
+@app.route("/blog",methods = ['POST','GET'])
 def blog():
-    if request.method == "GET":
-           return render_template("blog.html")
+    if request.method == "POST":
+           bloggername = request.form["name"]
+           blogtype = request.form["topic"]
+           blogcontent = request.form["content"]
+           try:
+               blogDbConnect.blogcursor.execute(
+                     f"""INSERT INTO blogcontent (name,topic,writing) VALUES (%s,%s,%s)""",(bloggername,blogtype,blogcontent) 
+               )
+               blogDbConnect.blogconnection.commit()
+               flash("blog is successfully submitted")
+               return redirect(url_for("index"))
+           except Exception as e:
+               flash("could not submit the blog")
+    else:   
+          return render_template("blog.html")
     
 # ---Registration process--- 
 
@@ -28,7 +52,7 @@ def signup():
          upassword = request.form["password"]
          try:
              dbConnect.mycursor.execute(
-                  f""" INSERT INTO user (name,email,password) VALUES (%s,%s,%s)""",(uname,uemail,upassword)
+                  f"""  INSERT INTO user (name,email,password) VALUES (%s,%s,%s)""",(uname,uemail,upassword)
              )
              dbConnect.connection.commit()
              flash('signup successful')

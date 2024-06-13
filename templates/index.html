@@ -53,7 +53,10 @@
 
     <!-- Template Main CSS File -->
 
-    <link href="{{ url_for('static', filename='assets/css/style.css') }}" rel="stylesheet" />
+    <link
+      href="{{ url_for('static', filename='assets/css/style.css') }}"
+      rel="stylesheet"
+    />
 
     <!-- =======================================================
   * Template Name: eBusiness
@@ -80,11 +83,9 @@
           <ul>
             <li><a class="nav-link scrollto active" href="/#hero">Home</a></li>
             <li><a class="nav-link scrollto" href="/#about">About</a></li>
-          
-         
-    
-            <li><a href="/#blog">Blog</a></li> 
+
             {% if 'userid' in session %}
+            <li><a href="/blog">Blog</a></li>
             <li><a href="/logout">Log out</a></li>
             {% else %}
             <li><a href="/signup">Sign Up</a></li>
@@ -114,19 +115,20 @@
           <div class="carousel-inner" role="listbox">
             <div
               class="carousel-item active"
-              style="background-image: url({{ url_for('static',filename='assets/img/hero-carousel/1.jpg') }})">
+              style="background-image: url({{ url_for('static',filename='assets/img/hero-carousel/hero-1.jpg') }})"
+            >
               <div class="carousel-container">
                 <div class="container">
                   <h2 class="animate__animated animate__fadeInDown">
-                    The Best Business Information
+                    Start Your Blogging Journey Today
                   </h2>
                   <p class="animate__animated animate__fadeInUp">
-                    We're In The Business Of Helping You Start Your Business
+                    Ready to share your voice with the world? Sign up now and start your blogging journey with eBlogs. 
                   </p>
                   <a
-                    href="#about"
+                    href="/#blog"
                     class="btn-get-started scrollto animate__animated animate__fadeInUp"
-                    >Get Started</a
+                    >Start Exploring</a
                   >
                 </div>
               </div>
@@ -134,20 +136,20 @@
 
             <div
               class="carousel-item"
-              style="background-image: url({{ url_for('static',filename='assets/img/hero-carousel/2.jpg') }})">
-            
+              style="background-image: url({{ url_for('static',filename='assets/img/hero-carousel/hero-2.jpg') }})"
+            >
               <div class="carousel-container">
                 <div class="container">
                   <h2 class="animate__animated animate__fadeInDown">
-                    At vero eos et accusamus
+                    Discover Inspiring Content
                   </h2>
                   <p class="animate__animated animate__fadeInUp">
-                    Helping Business Security & Peace of Mind for Your Family
+                    Dive into a world of diverse and engaging content.
                   </p>
                   <a
-                    href="#about"
+                    href="/#blog"
                     class="btn-get-started scrollto animate__animated animate__fadeInUp"
-                    >Get Started</a
+                    >Start Exploring</a
                   >
                 </div>
               </div>
@@ -155,21 +157,20 @@
 
             <div
               class="carousel-item"
-              style="background-image: url({{ url_for('static',filename='assets/img/hero-carousel/3.jpg') }})">
-            
+              style="background-image: url({{ url_for('static',filename='assets/img/hero-carousel/hero-3.jpg') }})"
+            >
               <div class="carousel-container">
                 <div class="container">
                   <h2 class="animate__animated animate__fadeInDown">
-                    Temporibus autem quibusdam
+                    Unleash Your Creativity
                   </h2>
                   <p class="animate__animated animate__fadeInUp">
-                    Beatae vitae dicta sunt explicabo. Nemo enim ipsam
-                    voluptatem
+                    At eBlogs, we believe that everyone has a story to tell, a perspective to share, and a voice that deserves to be heard.
                   </p>
                   <a
-                    href="#about"
+                    href="/#blog"
                     class="btn-get-started scrollto animate__animated animate__fadeInUp"
-                    >Get Started</a
+                    >Start Exploring</a
                   >
                 </div>
               </div>
@@ -221,7 +222,10 @@
               <div class="well-left">
                 <div class="single-well">
                   <a href="#">
-                    <img src="{{url_for('static',filename='assets/img/about/1.jpg') }}" alt="" />
+                    <img
+                      src="{{url_for('static',filename='assets/img/about/about-1.jpg') }}"
+                      alt=""
+                    />
                   </a>
                 </div>
               </div>
@@ -231,24 +235,23 @@
               <div class="well-middle">
                 <div class="single-well">
                   <a href="#">
-                    <h4 class="sec-head">project Maintenance</h4>
+                    <h4 class="sec-head">What We Offer</h4>
                   </a>
                   <p>
-                    Redug Lagre dolor sit amet, consectetur adipisicing elit.
-                    Itaque quas officiis iure aspernatur sit adipisci quaerat
-                    unde at nequeRedug Lagre dolor sit amet, consectetur
-                    adipisicing elit. Itaque quas officiis iure
+                    eBlogs was founded by a group of avid bloggers and tech enthusiasts who recognized
+                    the need for a user-friendly and feature-rich blogging platform. Since our inception,
+                    we have grown into a vibrant community of diverse voices.
                   </p>
                   <ul>
-                    <li><i class="bi bi-check"></i> Interior design Package</li>
-                    <li><i class="bi bi-check"></i> Building House</li>
+                    <li><i class="bi bi-check"></i>A Powerful Blogging Platform</li>
+                    <li><i class="bi bi-check"></i>Community Engagement</li>
                     <li>
-                      <i class="bi bi-check"></i> Reparing of Residentail Roof
+                      <i class="bi bi-check"></i>Dedicated Support
                     </li>
                     <li>
-                      <i class="bi bi-check"></i> Renovaion of Commercial Office
+                      <i class="bi bi-check"></i>Integrity and transparency
                     </li>
-                    <li><i class="bi bi-check"></i> Make Quality Products</li>
+                    <li><i class="bi bi-check"></i>Inclusive and supportive environment</li>
                   </ul>
                 </div>
               </div>
@@ -259,168 +262,21 @@
       </div>
       <!-- End About Section -->
 
-   
-
-      <!-- ======= Team Section ======= -->
-      <div id="team" class="our-team-area area-padding">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12 col-sm-12 col-xs-12">
-              <div class="section-headline text-center">
-                <h2>Our special Team</h2>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-3 col-sm-3 col-xs-12">
-              <div class="single-team-member">
-                <div class="team-img">
-                  <a href="#">
-                    <img src="{{url_for('static',filename='assets/img/team/1.jpg') }}" alt="" />
-                  </a>
-                  <div class="team-social-icon text-center">
-                    <ul>
-                      <li>
-                        <a href="#">
-                          <i class="bi bi-facebook"></i>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <i class="bi bi-twitter"></i>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <i class="bi bi-instagram"></i>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="team-content text-center">
-                  <h4>Jhon Mickel</h4>
-                  <p>Seo</p>
-                </div>
-              </div>
-            </div>
-            <!-- End column -->
-            <div class="col-md-3 col-sm-3 col-xs-12">
-              <div class="single-team-member">
-                <div class="team-img">
-                  <a href="#">
-                    <img src="{{ url_for('static',filename='assets/img/team/2.jpg') }}" alt="" />
-                  </a>
-                  <div class="team-social-icon text-center">
-                    <ul>
-                      <li>
-                        <a href="#">
-                          <i class="bi bi-facebook"></i>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <i class="bi bi-twitter"></i>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <i class="bi bi-instagram"></i>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="team-content text-center">
-                  <h4>Andrew Arnold</h4>
-                  <p>Web Developer</p>
-                </div>
-              </div>
-            </div>
-            <!-- End column -->
-            <div class="col-md-3 col-sm-3 col-xs-12">
-              <div class="single-team-member">
-                <div class="team-img">
-                  <a href="#">
-                    <img src="{{url_for('static',filename='assets/img/team/3.jpg')}}" alt="" />
-                  </a>
-                  <div class="team-social-icon text-center">
-                    <ul>
-                      <li>
-                        <a href="#">
-                          <i class="bi bi-facebook"></i>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <i class="bi bi-twitter"></i>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <i class="bi bi-instagram"></i>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="team-content text-center">
-                  <h4>Lellien Linda</h4>
-                  <p>Web Design</p>
-                </div>
-              </div>
-            </div>
-            <!-- End column -->
-            <div class="col-md-3 col-sm-3 col-xs-12">
-              <div class="single-team-member">
-                <div class="team-img">
-                  <a href="#">
-                    <img src="{{url_for('static',filename='assets/img/team/4.jpg') }}" alt="" />
-                  </a>
-                  <div class="team-social-icon text-center">
-                    <ul>
-                      <li>
-                        <a href="#">
-                          <i class="bi bi-facebook"></i>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <i class="bi bi-twitter"></i>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <i class="bi bi-instagram"></i>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="team-content text-center">
-                  <h4>Jhon Powel</h4>
-                  <p>Seo Expert</p>
-                </div>
-              </div>
-            </div>
-            <!-- End column -->
-          </div>
-        </div>
-      </div>
-      <!-- End Team Section -->
-
       <!-- ======= Rviews Section ======= -->
       <div class="reviews-area">
         <div class="row g-0">
           <div class="col-lg-6">
-            <img src="{{ url_for('static',filename='assets/img/about/2.jpg') }}" alt="" class="img-fluid" />
+            <img
+              src="{{ url_for('static',filename='assets/img/about/about-4.jpg') }}"
+              alt=""
+              class="img-fluid"
+            />
           </div>
           <div class="col-lg-6 work-right-text d-flex align-items-center">
             <div class="px-5 py-5 py-lg-0">
-              <h2>working with us</h2>
+              <h2>Share with us</h2>
               <h5>
-                Web Design, Ready Home, Construction and Co-operate Outstanding
-                Buildings.
+                At eBlogs, we are dedicated to fostering a vibrant community of writers and readers. 
               </h5>
               <a href="#contact" class="ready-btn scrollto">Contact us</a>
             </div>
@@ -430,8 +286,7 @@
       <!-- End Rviews Section -->
 
       <!-- ======= Portfolio Section ======= -->
-     
-       
+
       <!-- ======= Testimonials Section ======= -->
       <div id="testimonials" class="testimonials">
         <div class="container">
@@ -445,15 +300,8 @@
                     alt=""
                   />
                   <h3>Saul Goodman</h3>
-                  <h4>Ceo &amp; Founder</h4>
-                  <p>
-                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                    Proin iaculis purus consequat sem cure digni ssim donec
-                    porttitora entum suscipit rhoncus. Accusantium quam,
-                    ultricies eget id, aliquam eget nibh et. Maecen aliquam,
-                    risus at semper.
-                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                  </p>
+                
+              
                 </div>
               </div>
               <!-- End testimonial item -->
@@ -466,15 +314,8 @@
                     alt=""
                   />
                   <h3>Sara Wilsson</h3>
-                  <h4>Designer</h4>
-                  <p>
-                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                    Export tempor illum tamen malis malis eram quae irure esse
-                    labore quem cillum quid cillum eram malis quorum velit fore
-                    eram velit sunt aliqua noster fugiat irure amet legam anim
-                    culpa.
-                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                  </p>
+                
+               
                 </div>
               </div>
               <!-- End testimonial item -->
@@ -487,14 +328,8 @@
                     alt=""
                   />
                   <h3>Jena Karlis</h3>
-                  <h4>Store Owner</h4>
-                  <p>
-                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                    Enim nisi quem export duis labore cillum quae magna enim
-                    sint quorum nulla quem veniam duis minim tempor labore quem
-                    eram duis noster aute amet eram fore quis sint minim.
-                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                  </p>
+                 
+                
                 </div>
               </div>
               <!-- End testimonial item -->
@@ -507,15 +342,8 @@
                     alt=""
                   />
                   <h3>Matt Brandon</h3>
-                  <h4>Freelancer</h4>
-                  <p>
-                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                    Fugiat enim eram quae cillum dolore dolor amet nulla culpa
-                    multos export minim fugiat minim velit minim dolor enim duis
-                    veniam ipsum anim magna sunt elit fore quem dolore labore
-                    illum veniam.
-                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                  </p>
+                
+                
                 </div>
               </div>
               <!-- End testimonial item -->
@@ -528,15 +356,8 @@
                     alt=""
                   />
                   <h3>John Larson</h3>
-                  <h4>Entrepreneur</h4>
-                  <p>
-                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                    Quis quorum aliqua sint quem legam fore sunt eram irure
-                    aliqua veniam tempor noster veniam enim culpa labore duis
-                    sunt culpa nulla illum cillum fugiat legam esse veniam culpa
-                    fore nisi cillum quid.
-                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                  </p>
+           
+                 
                 </div>
               </div>
               <!-- End testimonial item -->
@@ -559,217 +380,32 @@
                 </div>
               </div>
             </div>
-            <div class="row">
-              <!-- Start Left Blog -->
+
+          <div class="row">
+            {% for blog in blogs %}
+
               <div class="col-md-4 col-sm-4 col-xs-12">
                 <div class="single-blog">
                   <div class="single-blog-img">
                     <a href="blog.html">
-                      <img src="{{ url_for('static',filename='assets/img/blog/1.jpg') }}" alt="" />
+                      <img
+                        src="{{ url_for('static', filename='assets/img/blog/1-b.jpg') }}"
+                        alt=""
+                      />
                     </a>
                   </div>
-                  <div class="blog-meta">
-                    <span class="comments-type">
-                      <i class="fa fa-comment-o"></i>
-                      <a href="#">13 comments</a>
-                    </span>
-                    <span class="date-type">
-                      <i class="fa fa-calendar"></i>2016-03-05 / 09:10:16
-                    </span>
-                  </div>
                   <div class="blog-text">
-                    <h4>
-                      <a href="blog.html">Assumenda repud eum veniam</a>
-                    </h4>
-                    <p>
-                      Lorem ipsum dolor sit amet conse adipis elit Assumenda
-                      repud eum veniam optio modi sit explicabo nisi magnam
-                      quibusdam.sit amet conse adipis elit Assumenda repud eum
-                      veniam optio modi sit explicabo nisi magnam quibusdam.
-                    </p>
+                    <h4><a href="blog.html">{{blog[2]}}</a></h4>
+                    <p>{{blog[3]}}</p>
                   </div>
-                  <span>
-                    <a href="blog.html" class="ready-btn">Read more</a>
-                  </span>
-                </div>
-                <!-- Start single blog -->
-              </div>
-              <!-- End Left Blog-->
-              <!-- Start Left Blog -->
-              <div class="col-md-4 col-sm-4 col-xs-12">
-                <div class="single-blog">
-                  <div class="single-blog-img">
-                    <a href="blog.html">
-                      <img src="{{ url_for('static',filename='assets/img/blog/2.jpg') }}" alt="" />
-                    </a>
-                  </div>
-                  <div class="blog-meta">
-                    <span class="comments-type">
-                      <i class="fa fa-comment-o"></i>
-                      <a href="#">130 comments</a>
-                    </span>
-                    <span class="date-type">
-                      <i class="fa fa-calendar"></i>2016-03-05 / 09:10:16
-                    </span>
-                  </div>
-                  <div class="blog-text">
-                    <h4>
-                      <a href="blog.html">Explicabo magnam quibusdam.</a>
-                    </h4>
-                    <p>
-                      Lorem ipsum dolor sit amet conse adipis elit Assumenda
-                      repud eum veniam optio modi sit explicabo nisi magnam
-                      quibusdam.sit amet conse adipis elit Assumenda repud eum
-                      veniam optio modi sit explicabo nisi magnam quibusdam.
-                    </p>
-                  </div>
-                  <span>
-                    <a href="blog.html" class="ready-btn">Read more</a>
-                  </span>
-                </div>
-                <!-- Start single blog -->
-              </div>
-              <!-- End Left Blog-->
-              <!-- Start Right Blog-->
-              <div class="col-md-4 col-sm-4 col-xs-12">
-                <div class="single-blog">
-                  <div class="single-blog-img">
-                    <a href="blog.html">
-                      <img src="{{ url_for('static',filename='assets/img/blog/3.jpg') }}" alt="" />
-                    </a>
-                  </div>
-                  <div class="blog-meta">
-                    <span class="comments-type">
-                      <i class="fa fa-comment-o"></i>
-                      <a href="#">10 comments</a>
-                    </span>
-                    <span class="date-type">
-                      <i class="fa fa-calendar"></i>2016-03-05 / 09:10:16
-                    </span>
-                  </div>
-                  <div class="blog-text">
-                    <h4>
-                      <a href="blog.html">Lorem ipsum dolor sit amet</a>
-                    </h4>
-                    <p>
-                      Lorem ipsum dolor sit amet conse adipis elit Assumenda
-                      repud eum veniam optio modi sit explicabo nisi magnam
-                      quibusdam.sit amet conse adipis elit Assumenda repud eum
-                      veniam optio modi sit explicabo nisi magnam quibusdam.
-                    </p>
-                  </div>
-                  <span>
-                    <a href="blog.html" class="ready-btn">Read more</a>
-                  </span>
                 </div>
               </div>
-              <!-- End Right Blog-->
-                   <!-- Start Right Blog-->
-              <div class="col-md-4 col-sm-4 col-xs-12">
-                <div class="single-blog">
-                  <div class="single-blog-img">
-                    <a href="blog.html">
-                      <img src="{{url_for('static',filename='assets/img/blog/3.jpg') }}" alt="" />
-                    </a>
-                  </div>
-                  <div class="blog-meta">
-                    <span class="comments-type">
-                      <i class="fa fa-comment-o"></i>
-                      <a href="#">10 comments</a>
-                    </span>
-                    <span class="date-type">
-                      <i class="fa fa-calendar"></i>2016-03-05 / 09:10:16
-                    </span>
-                  </div>
-                  <div class="blog-text">
-                    <h4>
-                      <a href="blog.html">Lorem ipsum dolor sit amet</a>
-                    </h4>
-                    <p>
-                      Lorem ipsum dolor sit amet conse adipis elit Assumenda
-                      repud eum veniam optio modi sit explicabo nisi magnam
-                      quibusdam.sit amet conse adipis elit Assumenda repud eum
-                      veniam optio modi sit explicabo nisi magnam quibusdam.
-                    </p>
-                  </div>
-                  <span>
-                    <a href="blog.html" class="ready-btn">Read more</a>
-                  </span>
-                </div>
-              </div>
-              <!-- End Right Blog-->
-                   <!-- Start Right Blog-->
-              <div class="col-md-4 col-sm-4 col-xs-12">
-                <div class="single-blog">
-                  <div class="single-blog-img">
-                    <a href="blog.html">
-                      <img src="{{url_for('static',filename='assets/img/blog/3.jpg') }}" alt="" />
-                    </a>
-                  </div>
-                  <div class="blog-meta">
-                    <span class="comments-type">
-                      <i class="fa fa-comment-o"></i>
-                      <a href="#">10 comments</a>
-                    </span>
-                    <span class="date-type">
-                      <i class="fa fa-calendar"></i>2016-03-05 / 09:10:16
-                    </span>
-                  </div>
-                  <div class="blog-text">
-                    <h4>
-                      <a href="blog.html">Lorem ipsum dolor sit amet</a>
-                    </h4>
-                    <p>
-                      Lorem ipsum dolor sit amet conse adipis elit Assumenda
-                      repud eum veniam optio modi sit explicabo nisi magnam
-                      quibusdam.sit amet conse adipis elit Assumenda repud eum
-                      veniam optio modi sit explicabo nisi magnam quibusdam.
-                    </p>
-                  </div>
-                  <span>
-                    <a href="blog.html" class="ready-btn">Read more</a>
-                  </span>
-                </div>
-              </div>
-              <!-- End Right Blog-->
-                   <!-- Start Right Blog-->
-              <div class="col-md-4 col-sm-4 col-xs-12">
-                <div class="single-blog">
-                  <div class="single-blog-img">
-                    <a href="blog.html">
-                      <img src="{{ url_for('static',filename='assets/img/blog/3.jpg') }}" alt="" />
-                    </a>
-                  </div>
-                  <div class="blog-meta">
-                    <span class="comments-type">
-                      <i class="fa fa-comment-o"></i>
-                      <a href="#">10 comments</a>
-                    </span>
-                    <span class="date-type">
-                      <i class="fa fa-calendar"></i>2016-03-05 / 09:10:16
-                    </span>
-                  </div>
-                  <div class="blog-text">
-                    <h4>
-                      <a href="blog.html">Lorem ipsum dolor sit amet</a>
-                    </h4>
-                    <p>
-                      Lorem ipsum dolor sit amet conse adipis elit Assumenda
-                      repud eum veniam optio modi sit explicabo nisi magnam
-                      quibusdam.sit amet conse adipis elit Assumenda repud eum
-                      veniam optio modi sit explicabo nisi magnam quibusdam.
-                    </p>
-                  </div>
-                  <span>
-                    <a href="blog.html" class="ready-btn">Read more</a>
-                  </span>
-                </div>
-              </div>
-              <!-- End Right Blog-->
-            </div>
+
+            {% endfor %}
           </div>
         </div>
       </div>
+    </div>
       <!-- End Blog Section -->
 
       <!-- ======= Suscribe Section ======= -->
@@ -778,7 +414,7 @@
           <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs=12">
               <div class="suscribe-text text-center">
-                <h3>Welcome to our eBusiness company</h3>
+                <h3>Welcome to our eBlogs</h3>
                 <a class="sus-btn" href="#">Get A quote</a>
               </div>
             </div>
@@ -818,8 +454,8 @@
                   <div class="single-icon">
                     <i class="bi bi-envelope"></i>
                     <p>
-                      Email: info@example.com<br />
-                      <span>Web: www.example.com</span>
+                      Email: support@eBlogs.com<br />
+                     
                     </p>
                   </div>
                 </div>
@@ -932,13 +568,15 @@
               <div class="footer-content">
                 <div class="footer-head">
                   <div class="footer-logo">
-                    <h2><span>e</span>Business</h2>
+                    <h2><span>e</span>Blogs</h2>
                   </div>
 
                   <p>
-                    Sed ut perspiciatis unde omnis iste natus error sit
-                    voluptatem accusantium doloremque laudantium, totam rem
-                    aperiam, eaque ipsa quae ab illo inventore veritatis.
+                    Welcome to eBlogs, the premier platform for sharing your voice with the world! 
+                    Whether you're an experienced writer or just starting,
+                    we are here to support your blogging journey. If you have any questions, 
+                    feedback, or need assistance, please don't hesitate to reach out. Our team
+                    is dedicated to providing you with the best experience possible.
                   </p>
                   <div class="footer-icons">
                     <ul>
@@ -965,13 +603,12 @@
                 <div class="footer-head">
                   <h4>information</h4>
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor.
+                    For general inquiries and support,. We aim to respond to all emails within 24-48 hours.
                   </p>
                   <div class="footer-contacts">
                     <p><span>Tel:</span> +123 456 789</p>
-                    <p><span>Email:</span> contact@example.com</p>
-                    <p><span>Working Hours:</span> 9am-5pm</p>
+                    <p><span>Email:</span> support@eBlogs.com</p>
+                    
                   </div>
                 </div>
               </div>
@@ -983,22 +620,34 @@
                   <h4>Instagram</h4>
                   <div class="flicker-img">
                     <a href="#"
-                      ><img src="{{ url_for('static',filename='assets/img/portfolio/1.jpg') }}" alt=""
+                      ><img
+                        src="{{ url_for('static',filename='assets/img/portfolio/1.jpg') }}"
+                        alt=""
                     /></a>
                     <a href="#"
-                      ><img src="{{ url_for('static',filename='assets/img/portfolio/2.jpg') }}" alt=""
+                      ><img
+                        src="{{ url_for('static',filename='assets/img/portfolio/2.jpg') }}"
+                        alt=""
                     /></a>
                     <a href="#"
-                      ><img src="{{ url_for('static',filename='assets/img/portfolio/3.jpg') }}" alt=""
+                      ><img
+                        src="{{ url_for('static',filename='assets/img/portfolio/3.jpg') }}"
+                        alt=""
                     /></a>
                     <a href="#"
-                      ><img src="{{ url_for('static',filename='assets/img/portfolio/4.jpg') }}" alt=""
+                      ><img
+                        src="{{ url_for('static',filename='assets/img/portfolio/4.jpg') }}"
+                        alt=""
                     /></a>
                     <a href="#"
-                      ><img src="{{ url_for('static',filename='assets/img/portfolio/5.jpg') }}" alt=""
+                      ><img
+                        src="{{ url_for('static',filename='assets/img/portfolio/5.jpg') }}"
+                        alt=""
                     /></a>
                     <a href="#"
-                      ><img src="{{ url_for('static',filename='assets/img/portfolio/6.jpg') }}" alt=""
+                      ><img
+                        src="{{ url_for('static',filename='assets/img/portfolio/6.jpg') }}"
+                        alt=""
                     /></a>
                   </div>
                 </div>
@@ -1013,7 +662,7 @@
             <div class="col-md-12 col-sm-12 col-xs-12">
               <div class="copyright text-center">
                 <p>
-                  &copy; Copyright <strong>eBusiness</strong>. All Rights
+                  &copy; Copyright <strong>eBlogs</strong>. All Rights
                   Reserved
                 </p>
               </div>
@@ -1024,8 +673,8 @@
               Licensing information: https://bootstrapmade.com/license/
               Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=eBusiness
             -->
-                Designed by
-                <a href="https://bootstrapmade.com/">BootstrapMade</a>
+               
+               
               </div>
             </div>
           </div>

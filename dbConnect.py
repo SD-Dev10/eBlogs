@@ -1,7 +1,7 @@
 import mysql.connector 
 
 
-def db_connect():
+def dbconnect():
     try:
           db = mysql.connector.connect(
           database='credentials',
@@ -13,13 +13,14 @@ def db_connect():
        )
 
     except Exception as e:
-        print(f'DB Connection failed, error ==> {e}')
+        print(f"""DB Connection failed, error ==> {e}""")
 
     else:
         return db.cursor(),db
 
-mycursor,connection = db_connect()
-     
+mycursor,connection = dbconnect()
+
+ 
 # mycursor.execute(f"""
 #    SELECT * FROM USER
 # """)    
